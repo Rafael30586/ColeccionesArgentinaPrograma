@@ -1,11 +1,10 @@
 package servicios;
 
-import com.sun.tools.javac.Main;
+
 import entidades.Pelicula;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class PeliculaServicio {
@@ -18,17 +17,17 @@ public class PeliculaServicio {
         double duracion;
 
         while(respuesta=='s'){
-            System.out.println("Pelicula: ");
-            titulo = entrada.next();
+            System.out.println("Película: ");
+            titulo = entrada.next().toUpperCase();
             System.out.println("Director: ");
-            director = entrada.next();
-            System.out.println("Duracion: ");
+            director = entrada.next().toUpperCase();
+            System.out.println("Duración: ");
             duracion = entrada.nextDouble();
 
             peliculas.add(new Pelicula(titulo,director,duracion));
 
             do{
-                System.out.println("Añadir otra pelicula?: (s/n)");
+                System.out.println("¿Añadir otra película?: (s/n)");
                 respuesta = entrada.next().toLowerCase().charAt(0);
             }while(respuesta!='s' && respuesta!='n');
 
@@ -39,7 +38,7 @@ public class PeliculaServicio {
 
     public void mostrarPeliculas(ArrayList<Pelicula> peliculas){
         System.out.println("------------------------------------------------");
-        System.out.println("Lista de peliculas");
+        System.out.println("Lista de películas");
         for(Pelicula pelicula : peliculas){
             System.out.println(pelicula.getTitulo());
         }
@@ -60,7 +59,7 @@ public class PeliculaServicio {
     public void ordenarPeliculas(ArrayList<Pelicula> peliculas){
         peliculas.sort(Pelicula.compararDuracion);
         System.out.println("------------------------------------------------");
-        System.out.println("Ordenadas segun duracion");
+        System.out.println("Ordenadas según duración");
         for(Pelicula pelicula : peliculas){
             System.out.println(pelicula.getTitulo());
         }
@@ -70,7 +69,7 @@ public class PeliculaServicio {
     public void ordenarAscendente(ArrayList<Pelicula> peliculas){
         peliculas.sort(Pelicula.compararDuracion.reversed());
         System.out.println("------------------------------------------------");
-        System.out.println("Ordenadas segun duracion (ascendente)");
+        System.out.println("Ordenadas según duración (ascendente)");
         for(Pelicula pelicula : peliculas){
             System.out.println(pelicula.getTitulo());
         }
@@ -80,7 +79,7 @@ public class PeliculaServicio {
     public void ordenarTitulo(ArrayList<Pelicula> peliculas){
         peliculas.sort(Pelicula.compararTitulo);
         System.out.println("------------------------------------------------");
-        System.out.println("Ordenadas segun Titulo");
+        System.out.println("Ordenadas según título");
         for(Pelicula pelicula : peliculas){
             System.out.println(pelicula.getTitulo());
         }
@@ -90,7 +89,7 @@ public class PeliculaServicio {
     public void ordenarDirector(ArrayList<Pelicula> peliculas){
         peliculas.sort(Pelicula.compararDirector);
         System.out.println("------------------------------------------------");
-        System.out.println("Ordenadas segun Director");
+        System.out.println("Ordenadas según Director");
         for(Pelicula pelicula : peliculas){
             System.out.println(pelicula.getTitulo());
         }

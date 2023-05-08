@@ -23,7 +23,7 @@ public class Main {
             System.out.println("Escribir nombre de una raza de perro para agregar en la lista");
             raza = entrada.next();
             razasDePerro.add(raza);
-            System.out.println("Desea continuar? (s o n)");
+            System.out.println("¿Desea continuar? (s o n)");
             respuesta = entrada.next().toLowerCase().charAt(0);
 
 
@@ -33,13 +33,14 @@ public class Main {
                 for(String perro : razasDePerro){
                     System.out.print(perro+"   ");
                 }
+                System.out.println();
                 System.out.println("----------------------------------------------");
             }
             else if(respuesta!='s' && respuesta!='n'){ //...hacer que este sea else if !='s' y !='n'
-                System.out.println("Opcion incorrecta");
+                System.out.println("Opción incorrecta");
                 //continuar = true;
                 while(respuesta!='s' && respuesta!='n'){
-                    System.out.println("Desea continuar? (s o n)");
+                    System.out.println("¿Desea continuar? (s o n)");
                     respuesta = entrada.next().toLowerCase().charAt(0);
                 }
                 if(respuesta=='n'){
@@ -67,12 +68,16 @@ public class Main {
             }
         }
         if(seEncuentra){
+            System.out.println("----------------------------------------------");
             System.out.println("Se ha eliminado a "+raza+ " de la lista");
+            System.out.println("----------------------------------------------");
         }else{
             System.out.println(raza+ " no se encontraba dentro de la lista");
         }
         for(String perro : razasDePerro){
             System.out.print(perro+"   ");
         }
+        System.out.println();
+        System.out.println("----------------------------------------------");
     }
 }

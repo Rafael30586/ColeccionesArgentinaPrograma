@@ -24,15 +24,15 @@ public class AlumnoServicio {
                 System.out.println("Nombre del alumno: ");
                 nombreAlumno= entrada.next();
 
-                System.out.println("Ingresar primera nota");
+                System.out.println("Ingresar primera nota: ");
                 primeraNota = entrada.nextInt();
                 notas.add(primeraNota);
 
-                System.out.println("Ingresar segunda nota");
+                System.out.println("Ingresar segunda nota: ");
                 segundaNota = entrada.nextInt();
                 notas.add(segundaNota);
 
-                System.out.println("Ingresar tercera nota");
+                System.out.println("Ingresar tercera nota: ");
                 terceraNota = entrada.nextInt();
                 notas.add(terceraNota);
 
@@ -43,11 +43,11 @@ public class AlumnoServicio {
 
                 //notas.clear();
 
-                System.out.println("Desea crear otro alumno?(s/n)");
+                System.out.println("¿Desea crear otro alumno?(s/n)");
                 respuesta = entrada.next().toLowerCase().charAt(0);
             }else if(respuesta!='n'&&respuesta!='s'){
-                System.out.println("Opcion incorrecta");
-                System.out.println("Desea crear otro alumno?(s/n)");
+                System.out.println("Opción incorrecta");
+                System.out.println("¿Desea crear otro alumno?(s/n)");
                 respuesta = entrada.next().toLowerCase().charAt(0);
             }
 

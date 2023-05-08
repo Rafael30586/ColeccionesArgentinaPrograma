@@ -14,13 +14,13 @@ public class PaisServicio {
 
         while(respuesta=='s'){
 
-            System.out.println("Nombre de un pais: ");
+            System.out.println("Nombre de un país: ");
             pais = entrada.next().toUpperCase();
 
             paises.add(pais);
 
             do{
-                System.out.println("Desea agregar mas paises? (s/n): ");
+                System.out.println("¿Desea agregar más paises? (s/n): ");
                 respuesta = entrada.next().toLowerCase().charAt(0);
             }while(respuesta!='s'&&respuesta!='n');
 
@@ -40,6 +40,7 @@ public class PaisServicio {
         ArrayList<String> listaPaises = new ArrayList(paises);
         listaPaises.sort(String::compareTo);
         System.out.println("-------------------------------------------");
+        System.out.println("En orden alfabético");
         for(String pais : listaPaises){
             System.out.println(pais);
         }
@@ -49,7 +50,7 @@ public class PaisServicio {
     public void eliminarPais(HashSet<String> paises){
         Scanner entrada = new Scanner(System.in).useDelimiter("\n");
         Iterator<String> iterador = paises.iterator();
-        System.out.println("Elija un pais para eliminar");
+        System.out.println("Elija un país para eliminar");
         String pais = entrada.next().toUpperCase();
         boolean seEncuentra = false;
 
@@ -61,7 +62,7 @@ public class PaisServicio {
         }
 
         if(!seEncuentra){
-            System.out.println("El pais elegido no se encontraba en la lista");
+            System.out.println("El país elegido no se encontraba en la lista");
         }else{
             System.out.println("-------------------------------------------");
             /*

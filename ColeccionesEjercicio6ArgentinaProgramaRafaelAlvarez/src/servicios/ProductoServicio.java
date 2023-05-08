@@ -42,16 +42,13 @@ public class ProductoServicio {
 
     public void eliminarProducto(HashMap<String,Double> productos){
         Scanner entrada = new Scanner(System.in).useDelimiter("\n");
-        boolean seEcuentra = false;
+        Double valor = 0.0;
 
         System.out.println("Nombre de producto a eliminar: ");
         String nombreProducto = entrada.next().toUpperCase();
-        for(Map.Entry<String , Double> entry : productos.entrySet()){
-            if(entry.getKey().equals(nombreProducto)){
-                productos.remove(entry.getKey(),entry.getValue());
-            }
-        }
-        if(!seEcuentra){
+        valor = productos.remove(nombreProducto);
+
+        if(valor==null){
             System.out.println("El producto solicitado no se encontraba en la lista");
         }
         System.out.println("------------------------------------------");
